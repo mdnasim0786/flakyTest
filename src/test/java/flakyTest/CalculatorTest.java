@@ -9,7 +9,7 @@ public class CalculatorTest {
 
     @Test
     public void test() {
-        int num = (int) (Math.random()*(5-1+1)+1);
+        int num = (int) (Math.random()*(4-2+1)+2);
         assertEquals(num,2);
     }
 }
