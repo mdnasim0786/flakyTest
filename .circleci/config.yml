@@ -27,8 +27,7 @@ jobs:
           name: Test
           command: mvn test
       - store_test_results:
-          path: flakyTest
-
+          path: test-results
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
