@@ -33,9 +33,9 @@ jobs:
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
           when: always
       - store_test_results:
-          path: /flakyTest/test-results
+          path: test-results
       - store_artifacts:
-          path: /flakyTest/test-results
+          path: test-results
 
 
 # Invoke jobs via workflows
