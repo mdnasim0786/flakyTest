@@ -15,7 +15,6 @@ jobs:
       - image: cimg/openjdk:11.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    working_directory: /flakyTest
     steps:
       # Checkout the code as the first step.
       - checkout
@@ -27,6 +26,12 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results/junit/
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/junit/ \;
+          when: always
       - store_test_results:
           path: /flakyTest/test-results
       - store_artifacts:
