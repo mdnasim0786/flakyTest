@@ -43,5 +43,4 @@ workflows:
       - build-and-test
   maven_test:
     jobs:
-      - maven/test:
-          test_results_path: junit
+      - maven/test
